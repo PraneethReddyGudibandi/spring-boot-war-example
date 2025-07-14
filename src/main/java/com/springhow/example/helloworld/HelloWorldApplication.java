@@ -17,13 +17,34 @@ public class HelloWorldApplication extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloWorldApplication.class);
+        SpringApplication.run(HelloWorldApplication.class, args);
     }
-
 
     @RequestMapping("/")
-    String helloWorld() {
-        return "Praneeth new app live and running";
+    public String helloWorld() {
+        return """
+            <html>
+                <head>
+                    <style>
+                        body {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            margin: 0;
+                            background-color: #f9f9f9;
+                        }
+                        h1 {
+                            font-size: 48px;
+                            color: #2c3e50;
+                            font-family: Arial, sans-serif;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Praneeth new app live and running</h1>
+                </body>
+            </html>
+        """;
     }
-
 }
